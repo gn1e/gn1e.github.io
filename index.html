@@ -3,119 +3,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fera</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap">
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            height: 100vh;
-            overflow: hidden;
-            font-family: Arial, sans-serif;
-        }
-        .background {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('https://github.com/Soughtless/FeraPublicRepo/blob/main/site/preview3.png?raw=true') no-repeat center center;
-            background-size: cover;
-            z-index: -1;
-        }
-        .background::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(46, 46, 46, 0.2); /* Black overlay */
-            filter: blur(5px); /* Apply blur effect */
-            z-index: -1;
-        }
-        .overlay {
-            position: relative;
-            height: 100%;
-            width: 100%;
-        }
-        .top-bar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            text-align: center;
-            background-color: #ffbc24;
-            color: #000;
-            font-weight: bold;
-            padding: 5px 0;
-            z-index: 1;
-            font-family: Montserrat, sans-serif;
-            font-size: 20px;
-        }
-        .content {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-            color: #fff;
-            z-index: 1;
-        }
-        .main-text {
-            font-family: 'Montserrat', Arial;
-            font-size: 50px;
-            font-weight: 900; /* Montserrat Black */
-            text-transform: uppercase; /* Make text all caps */
-            line-height: 1.2; /* Adjust line height for spacing between lines */
-            display: inline-block;
-        }
-        .button-container {
-            margin-top: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .button {
-            background-color: #ffbc24;
-            color: #000;
-            border: none;
-            padding: 15px 30px;
-            border-radius: 10px;
-            font-weight: bold;
-            font-family: arial;
-            cursor: pointer;
-            font-size: 14px;
-            margin-right: 15px;
-        }
-        .more-info {
-            color: rgb(255, 255, 255);
-            background-color: #c0c0c028;
-            border: none;
-            padding: 15px 30px;
-            border-radius: 10px;
-            font-weight: bold;
-            font-family: arial;
-            cursor: pointer;
-            font-size: 14px;
-            margin-right: 15px;
-        }
-    </style>
+    <title>Jungle</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="background"></div>
-    <div class="overlay">
-        <div class="top-bar">DISCORD.GG/FERAMP</div>
-        <div class="content">
-            <div class="main-text">
-                Relive Chapter 1<br>
-                Season 5 With Fera
+    <header>
+        <img src="logo.png" alt="logo" class="logo-yap">
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#download">Download</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero-section">
+        <div class="hero-content">
+            <h1>Welcome to Jungle!</h1>
+            <p>The best OGFN experience.</p>
+            <a href="#download" class="cta-button">Download Now</a>
+        </div>
+    </section>
+
+    <section id="features" class="features-section">
+        <h2>Features</h2>
+        <div class="features-container">
+            <div class="feature feature-1">
+                <img src="icon1.png" alt="Feature 1">
+                <h3>Enjoy rewards!</h3>
+                <p>We have V-Bucks per kill and win, daily V-Bucks and more to come!</p>
             </div>
-            <div class="button-container">
-                <button class="button">uh</button>
-                <div class="more-info">MORE ABOUT FERA</div>
+            <div class="feature feature-2">
+                <img src="icon2.png" alt="Feature 2">
+                <h3>Play with friends!</h3>
+                <p>Play with friends on our team gamemodes!</p>
             </div>
         </div>
+    </section>
+
+<section id="download" class="download-section">
+    <h2>How to Download and Install</h2>
+    
+    <div class="step">
+        <div class="step-number">1</div>
+        <div class="step-content">
+            <h3>Download the Launcher</h3>
+            <p>Click on the appropriate download button below to get the launcher for your device.</p>
+        </div>
     </div>
+
+    <div class="step">
+        <div class="step-number">2</div>
+        <div class="step-content">
+            <h3>Install the Launcher</h3>
+            <p>Run the launcher installer and follow the instructions.</p>
+        </div>
+    </div>
+
+    <div class="step">
+        <div class="step-number">3</div>
+        <div class="step-content">
+            <h3>Launch the Launcher</h3>
+            <p>Once installed, launch the launcher from your desktop or app list.</p>
+        </div>
+    </div>
+
+    <div class="step">
+        <div class="step-number">4</div>
+        <div class="step-content">
+            <h3>Join Our Discord Community</h3>
+            <p>Join our Discord community, as you need to be in our discord server to play!</p>
+        </div>
+    </div>
+        <div class="download-buttons">
+            <a href="" class="download-button">Download for Windows</a>
+            <a href="#download" class="download-button" onclick="showError()">Download for Android</a>
+        </div>
+    </section>
+
+    <div id="error-message" class="error-message">
+        <p>Error: soon?</p>
+        <div class="progress-bar"></div>
+    </div>
+
+    <section id="discord" class="discord-section">
+        <img src="discord-image.png" alt="Join Our Discord" class="discord-image">
+        <h2>Join Our Discord Community</h2>
+        <p>Connect with other players, get the latest updates, and join the conversation!</p>
+        <a href="https://discord.gg/junglefn" class="discord-button">Join Our Discord</a>
+    </section>
+    
+
+    <footer>
+        <p>&copy; 2024 Elio. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
