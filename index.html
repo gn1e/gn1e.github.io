@@ -1,105 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jungle</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <header>
-        <img src="logo.png" alt="logo" class="logo-yap">
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#download">Download</a></li>
-                <li><a href="#features">Features</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+ 
+    <div id="loading">
+        <img src="/web/20240909165442im_/https://gn1e.co/loading.gif" alt="Loading..." class="loading-gif">
+        <p class="loading-quote">"code: turning ideas into reality"</p>
+    </div>
 
-    <section id="home" class="hero-section">
-        <div class="hero-content">
-            <h1>Welcome to Jungle!</h1>
-            <p>The best OGFN experience.</p>
-            <a href="#download" class="cta-button">Download Now</a>
+    <div class="chat-container" id="main-content">
+        <div class="chat-header">
+            <h1>welcome to my website</h1>
+            <button class="theme-toggle" onclick="toggleTheme()">Toggle Theme</button>
         </div>
-    </section>
-
-    <section id="features" class="features-section">
-        <h2>Features</h2>
-        <div class="features-container">
-            <div class="feature feature-1">
-                <img src="icon1.png" alt="Feature 1">
-                <h3>Enjoy rewards!</h3>
-                <p>We have V-Bucks per kill and win, daily V-Bucks and more to come!</p>
+        <div class="chat-box" id="chat-box">
+            <div class="message">
+                <img src="/web/20240909165442im_/https://gn1e.co/avatar.png" alt="Profile Picture" class="avatar">
+                <div class="message-content">
+                    <span class="username">nade</span>
+                    <p>hi im nade</p>
+                </div>
             </div>
-            <div class="feature feature-2">
-                <img src="icon2.png" alt="Feature 2">
-                <h3>Play with friends!</h3>
-                <p>Play with friends on our team gamemodes!</p>
+            <div class="message">
+                <img src="/web/20240909165442im_/https://gn1e.co/avatar.png" alt="Profile Picture" class="avatar">
+                <div class="message-content">
+                    <span class="username">nade</span>
+                    <p>i code stuff when i feel like it</p>
+                </div>
+            </div>
+            <div class="message">
+                <img src="/web/20240909165442im_/https://gn1e.co/avatar.png" alt="Profile Picture" class="avatar">
+                <div class="message-content">
+                    <span class="username">nade</span>
+                    <p>here are my coding languages:</p>
+                    <ul>
+                        <li>JavaScript</li>
+                        <li>HTML</li>
+                        <li>C# (rarely)</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="message">
+                <img src="/web/20240909165442im_/https://gn1e.co/avatar.png" alt="Profile Picture" class="avatar">
+                <div class="message-content">
+                    <span class="username">nade</span>
+                    <p>my stuff:</p>
+                    <ul>
+                        <li><a href="https://web.archive.org/web/20240909165442/https://discord.gg/oldfortnite" target="_blank">exoticfn</a></li>
+                        <li><a href="https://web.archive.org/web/20240909165442/https://github.com/WindowsGreen" target="_blank">github</a></li>
+                        <li><a href="https://web.archive.org/web/20240909165442/https://discord.com/users/882672956239667272" target="_blank">my discord profile</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="message">
+                <img src="/web/20240909165442im_/https://gn1e.co/avatar.png" alt="Profile Picture" class="avatar">
+                <div class="message-content">
+                    <span class="username">nade</span>
+                    <p>listen to my favourite music!</p>
+                    <button class="play-music-button" onclick="toggleMusic()">Play Music</button>
+                    <audio id="music" src="/web/20240909165442im_/https://gn1e.co/audi.mp3"></audio> 
+                    <input type="range" id="volume-slider" class="volume-slider" min="0" max="1" step="0.01" value="1" oninput="setVolume(this.value)">
+                </div>
             </div>
         </div>
-    </section>
-
-<section id="download" class="download-section">
-    <h2>How to Download and Install</h2>
-    
-    <div class="step">
-        <div class="step-number">1</div>
-        <div class="step-content">
-            <h3>Download the Launcher</h3>
-            <p>Click on the appropriate download button below to get the launcher for your device.</p>
-        </div>
     </div>
-
-    <div class="step">
-        <div class="step-number">2</div>
-        <div class="step-content">
-            <h3>Install the Launcher</h3>
-            <p>Run the launcher installer and follow the instructions.</p>
-        </div>
-    </div>
-
-    <div class="step">
-        <div class="step-number">3</div>
-        <div class="step-content">
-            <h3>Launch the Launcher</h3>
-            <p>Once installed, launch the launcher from your desktop or app list.</p>
-        </div>
-    </div>
-
-    <div class="step">
-        <div class="step-number">4</div>
-        <div class="step-content">
-            <h3>Join Our Discord Community</h3>
-            <p>Join our Discord community, as you need to be in our discord server to play!</p>
-        </div>
-    </div>
-        <div class="download-buttons">
-            <a href="https://gn1e.co/Jungle/Jungle_Installer.exe" class="download-button">Download for Windows</a>
-            <a href="#download" class="download-button" onclick="showError()">Download for Android</a>
-        </div>
-    </section>
-
-    <div id="error-message" class="error-message">
-        <p>Error: soon?</p>
-        <div class="progress-bar"></div>
-    </div>
-
-    <section id="discord" class="discord-section">
-        <img src="discord-image.png" alt="Join Our Discord" class="discord-image">
-        <h2>Join Our Discord Community</h2>
-        <p>Connect with other players, get the latest updates, and join the conversation!</p>
-        <a href="https://discord.gg/junglefn" class="discord-button">Join Our Discord</a>
-    </section>
-    
-
-    <footer>
-        <p>&copy; 2024 nade. All rights reserved.</p>
-    </footer>
-
-    <script src="script.js"></script>
 </body>
 </html>
