@@ -1,105 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jungle</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>nade</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'Segoe UI', sans-serif;
+      background: url('https://images.unsplash.com/photo-1503264116251-35a269479413?auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
+      background-size: cover;
+      overflow: hidden;
+      color: #fff;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      animation: fadeIn 2s ease forwards;
+      opacity: 0;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+
+    .glass {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(20px);
+      border-radius: 20px;
+      padding: 2rem;
+      text-align: center;
+      max-width: 600px;
+      width: 90%;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.2), 0 0 40px rgba(255, 255, 255, 0.1);
+      margin-bottom: 1rem;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .links a {
+      color: #fff;
+      margin: 0 10px;
+      text-decoration: none;
+      opacity: 0.7;
+      transition: opacity 0.2s ease;
+    }
+
+    .links a:hover {
+      opacity: 1;
+    }
+
+    .song-info {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(15px);
+      border-radius: 12px;
+      padding: 10px 15px;
+      font-size: 0.9rem;
+      box-shadow: 0 0 12px rgba(255,255,255,0.3), 0 0 20px rgba(255,255,255,0.15);
+    }
+
+    audio {
+      display: none;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <img src="logo.png" alt="logo" class="logo-yap">
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#download">Download</a></li>
-                <li><a href="#features">Features</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <section id="home" class="hero-section">
-        <div class="hero-content">
-            <h1>Welcome to Jungle!</h1>
-            <p>The best OGFN experience.</p>
-            <a href="#download" class="cta-button">Download Now</a>
-        </div>
-    </section>
-
-    <section id="features" class="features-section">
-        <h2>Features</h2>
-        <div class="features-container">
-            <div class="feature feature-1">
-                <img src="icon1.png" alt="Feature 1">
-                <h3>Enjoy rewards!</h3>
-                <p>We have V-Bucks per kill and win, daily V-Bucks and more to come!</p>
-            </div>
-            <div class="feature feature-2">
-                <img src="icon2.png" alt="Feature 2">
-                <h3>Play with friends!</h3>
-                <p>Play with friends on our team gamemodes!</p>
-            </div>
-        </div>
-    </section>
-
-<section id="download" class="download-section">
-    <h2>How to Download and Install</h2>
-    
-    <div class="step">
-        <div class="step-number">1</div>
-        <div class="step-content">
-            <h3>Download the Launcher</h3>
-            <p>Click on the appropriate download button below to get the launcher for your device.</p>
-        </div>
+  <div class="glass">
+    <h1>nade</h1>
+    <p>I'm fascinated with the world.</p>
+    <div class="links">
+      <a href="https://github.com/gn1e" target="_blank">GitHub</a>
+      <a href="https://discord.com/users/yourid" target="_blank">Discord</a>
     </div>
+  </div>
 
-    <div class="step">
-        <div class="step-number">2</div>
-        <div class="step-content">
-            <h3>Install the Launcher</h3>
-            <p>Run the launcher installer and follow the instructions.</p>
-        </div>
-    </div>
+  <div class="song-info">
+    🎵 Now Playing: <strong>Caramella Girls - Caramelldansen</strong>
+  </div>
 
-    <div class="step">
-        <div class="step-number">3</div>
-        <div class="step-content">
-            <h3>Launch the Launcher</h3>
-            <p>Once installed, launch the launcher from your desktop or app list.</p>
-        </div>
-    </div>
-
-    <div class="step">
-        <div class="step-number">4</div>
-        <div class="step-content">
-            <h3>Join Our Discord Community</h3>
-            <p>Join our Discord community, as you need to be in our discord server to play!</p>
-        </div>
-    </div>
-        <div class="download-buttons">
-            <a href="https://services.ogfn.org/launcher/download" class="download-button">Download for Windows</a>
-            <a href="#download" class="download-button" onclick="showError()">Download for Android</a>
-        </div>
-    </section>
-
-    <div id="error-message" class="error-message">
-        <p>Error: soon?</p>
-        <div class="progress-bar"></div>
-    </div>
-
-    <section id="discord" class="discord-section">
-        <img src="discord-image.png" alt="Join Our Discord" class="discord-image">
-        <h2>Join Our Discord Community</h2>
-        <p>Connect with other players, get the latest updates, and join the conversation!</p>
-        <a href="https://discord.gg/hPFnCdYuGC" class="discord-button">Join Our Discord</a>
-    </section>
-    
-
-    <footer>
-        <p>&copy; 2024 Elio. All rights reserved.</p>
-    </footer>
-
-    <script src="script.js"></script>
+  <audio autoplay loop>
+    <source src="https://gn1e.co/Caramella Girls - Caramelldansen HD Version (Swedish Original) Official.mp3" type="audio/mpeg" />
+  </audio>
 </body>
 </html>
