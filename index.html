@@ -3,29 +3,49 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>nade</title>
+  <title>Welcome to My CDN</title>
   <style>
     * {
       box-sizing: border-box;
-    }
-
-    html, body {
       margin: 0;
       padding: 0;
-      height: 100%;
-      font-family: 'Segoe UI', sans-serif;
-      background: url('https://images.unsplash.com/photo-1503264116251-35a269479413?auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
-      background-size: cover;
-      overflow: hidden;
-      color: #fff;
     }
 
     body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      color: white;
       display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
-      animation: fadeIn 2s ease forwards;
+      min-height: 100vh;
+      overflow: hidden;
+    }
+
+    .container {
+      text-align: center;
+      padding: 2rem;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+      backdrop-filter: blur(10px);
+      animation: fadeIn 1.5s ease-out forwards;
+      opacity: 0;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      animation: slideUp 1s ease-out 0.5s forwards;
+      opacity: 0;
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin-top: 0.5rem;
+      color: #ddd;
+      animation: slideUp 1s ease-out 0.8s forwards;
       opacity: 0;
     }
 
@@ -35,168 +55,27 @@
       }
     }
 
-    .glass {
-      background: rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(20px);
-      border-radius: 20px;
-      padding: 2rem;
-      text-align: center;
-      max-width: 600px;
-      width: 90%;
-      box-shadow: 0 0 20px rgba(255, 255, 255, 0.2), 0 0 40px rgba(255, 255, 255, 0.1);
-      margin-bottom: 1rem;
+    @keyframes slideUp {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
-    h1 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-    }
-
-    p {
-      font-size: 1.2rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .links a {
-      color: #fff;
-      margin: 0 10px;
-      text-decoration: none;
-      opacity: 0.7;
-      transition: opacity 0.2s ease;
-    }
-
-    .links a:hover {
-      opacity: 1;
-    }
-
-    .song-info {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(15px);
-      border-radius: 12px;
-      padding: 10px 15px;
-      font-size: 0.9rem;
-      box-shadow: 0 0 12px rgba(255,255,255,0.3), 0 0 20px rgba(255,255,255,0.15);
-    }
-
-    .controls {
-      margin-top: 1rem;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      align-items: center;
-    }
-
-    .play-btn {
-      background: rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(15px);
-      border: none;
-      border-radius: 12px;
-      padding: 10px 20px;
-      color: #fff;
-      font-size: 1rem;
-      cursor: pointer;
-      box-shadow: 0 0 10px rgba(255,255,255,0.2);
-      transition: background 0.2s ease;
-    }
-
-    .play-btn:hover {
-      background: rgba(255, 255, 255, 0.2);
-    }
-
-    .volume-slider {
-      width: 150px;
-    }
-
-    .music-controls {
-  position: fixed;
-  bottom: 20px;
-  left: 20px;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(15px);
-  border-radius: 12px;
-  padding: 10px 15px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  box-shadow: 0 0 12px rgba(255,255,255,0.3), 0 0 20px rgba(255,255,255,0.15);
-  z-index: 100;
-}
-
-
-    input[type=range] {
-      -webkit-appearance: none;
-      width: 100%;
-      height: 6px;
-      border-radius: 5px;
-      background: rgba(255,255,255,0.3);
-      outline: none;
-      transition: background 0.2s;
-    }
-
-    input[type=range]::-webkit-slider-thumb {
-      -webkit-appearance: none;
-      appearance: none;
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-      background: #fff;
-      cursor: pointer;
-    }
-
-    audio {
-      display: none;
+    .glow {
+      color: #00ffff;
+      text-shadow: 0 0 5px #00ffff, 0 0 15px #00ffff;
     }
   </style>
 </head>
-<div class="music-controls">
-  <button class="play-btn" id="playBtn">Play</button>
-  <input type="range" class="volume-slider" id="volumeSlider" min="0" max="1" step="0.01" value="0.5" />
-</div>
 <body>
-  <div class="glass">
-    <h1>nade</h1>
-    <p>I'm fascinated with the world.</p>
-    <div class="links">
-      <a href="https://github.com/gn1e" target="_blank">GitHub</a>
-      <a href="https://discord.com/users/yourid" target="_blank">Discord</a>
-    </div>
+  <div class="container">
+    <h1 class="glow">Welcome to the Jungle CDN.</h1>
+    <p>hello world!!!</p>
   </div>
-
-  <div class="song-info">
-    🎵 Now Playing: <strong>Caramella Girls - Caramelldansen</strong>
-  </div>
-
-  <audio id="bgMusic" loop>
-    <source src="https://gn1e.co/Caramella Girls - Caramelldansen HD Version (Swedish Original) Official.mp3" type="audio/mpeg" />
-  </audio>
-
-  <script>
-    const audio = document.getElementById("bgMusic");
-    const playBtn = document.getElementById("playBtn");
-    const volumeSlider = document.getElementById("volumeSlider");
-
-    let isPlaying = false;
-
-    playBtn.addEventListener("click", () => {
-      if (!isPlaying) {
-        audio.volume = volumeSlider.value;
-        audio.play().then(() => {
-          isPlaying = true;
-          playBtn.textContent = "Pause";
-        }).catch(err => {});
-      } else {
-        audio.pause();
-        isPlaying = false;
-        playBtn.textContent = "Play";
-      }
-    });
-
-    volumeSlider.addEventListener("input", () => {
-      audio.volume = volumeSlider.value;
-    });
-  </script>
 </body>
 </html>
